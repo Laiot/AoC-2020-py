@@ -17,15 +17,7 @@ def p1(id_list):
     return res
 
 
-def main():
-    directory = pathlib.Path(__file__).parent.absolute()
-    filename = os.path.join(directory, 'inp.txt')
-
-    inp_file = open(filename, 'r')
-    id_list = inp_file.read().split("\n\n")
-
-    print(p1(id_list))
-
+def p2(id_list):
     res = 0
     for idd in id_list:
         check = 0
@@ -55,8 +47,18 @@ def main():
                     check += 1
         if check >= 7:
             res += 1
+    return res
 
-    print(res)
+
+def main():
+    directory = pathlib.Path(__file__).parent.absolute()
+    filename = os.path.join(directory, 'inp.txt')
+
+    inp_file = open(filename, 'r')
+    id_list = inp_file.read().split("\n\n")
+
+    print(p1(id_list))
+    print(p2(id_list))
 
 
 if __name__ == "__main__":
